@@ -178,6 +178,25 @@
     const { venueAndTravel } = config;
     if (!container || !venueAndTravel) return;
 
+    const paragraphsHtml = (venueAndTravel.venueParagraphs || [])
+      .map((p) => `<p>${escapeHtml(p)}</p>`)
+      .join("");
+
+    const linksHtml = `
+      <div class="editorial-links-row" style="margin-bottom: 1.5rem;">
+        ${
+          venueAndTravel.venueUrl
+            ? `<a href="${escapeHtml(venueAndTravel.venueUrl)}" class="editorial-link" target="_blank" rel="noopener">${escapeHtml(venueAndTravel.venueName || "Conference Hotel Website")} →</a>`
+            : ""
+        }
+        ${
+          venueAndTravel.islandMapUrl
+            ? `<a href="${escapeHtml(venueAndTravel.islandMapUrl)}" class="editorial-link" target="_blank" rel="noopener">View Ischia on Google Maps →</a>`
+            : ""
+        }
+      </div>
+    `;
+
     const dirsHtml = (venueAndTravel.directions || [])
       .map(
         (d) => `
@@ -190,10 +209,11 @@
       .join("");
 
     container.innerHTML = `
-      <p class="status-note">${escapeHtml(venueAndTravel.venueWipText)}</p>
       <div class="editorial-prose">
-        <p>${escapeHtml(venueAndTravel.travelIntro)}</p>
+        ${paragraphsHtml}
       </div>
+      ${linksHtml}
+      ${venueAndTravel.venueWipText ? `<p class="status-note">${escapeHtml(venueAndTravel.venueWipText)}</p>` : ""}
       <div class="directions-list">
         ${dirsHtml}
       </div>
@@ -237,41 +257,76 @@
     `;
   }
 
-  // 8. Calendar (.ics) Download
-  function setupCalendarLink() {
+  // 8. Direct Calendar Links (Google Calendar, Outlook, and iCal .ics)
+  function setupCalendarLinks() {
     const { event } = config;
+    const summary = `${event.title}: ${event.subtitle} (${event.shortName})`;
+    const location = event.calendarLocation || event.locationShort;
+    const description = `${event.dedication}. Venue: Hotel Continental Ischia (https://www.hotelcontinentalischia.it/en/). Website: ${event.siteUrl || "https://bruceallen.org/"}`;
+
+    // Google Calendar URL
+    const gcalLink = document.getElementById("gcal-link");
+    if (gcalLink) {
+      const gcalParams = new URLSearchParams({
+        action: "TEMPLATE",
+        text: summary,
+        dates: `${event.startDateISO}/${event.endDateISO}`,
+        details: description,
+        location: location
+      });
+      gcalLink.href = `https://calendar.google.com/calendar/render?${gcalParams.toString()}`;
+    }
+
+    // Outlook / Microsoft 365 Web Calendar URL
+    const outlookLink = document.getElementById("outlook-link");
+    if (outlookLink) {
+      const outlookParams = new URLSearchParams({
+        path: "/calendar/action/compose",
+        rru: "addevent",
+        subject: summary,
+        startdt: event.startDateHyphen || "2027-05-22",
+        enddt: event.endDateHyphen || "2027-05-27",
+        allday: "true",
+        body: description,
+        location: location
+      });
+      outlookLink.href = `https://outlook.office.com/calendar/0/deeplink/compose?${outlookParams.toString()}`;
+    }
+
+    // iCal (.ics) file download
     const icsBtn = document.getElementById("download-ics-btn");
-    if (!icsBtn) return;
+    if (icsBtn) {
+      icsBtn.addEventListener("click", () => {
+        const icsLines = [
+          "BEGIN:VCALENDAR",
+          "VERSION:2.0",
+          "PRODID:-//BruceFest 2027//Gravity Across Scales//EN",
+          "CALSCALE:GREGORIAN",
+          "METHOD:PUBLISH",
+          "BEGIN:VEVENT",
+          "UID:brucefest-2027-ischia@bruceallen.org",
+          "DTSTAMP:20261109T120000Z",
+          `DTSTART;VALUE=DATE:${event.startDateISO}`,
+          `DTEND;VALUE=DATE:${event.endDateISO}`,
+          `SUMMARY:${summary}`,
+          `LOCATION:${location}`,
+          `DESCRIPTION:${description}`,
+          `URL:${event.siteUrl || "https://bruceallen.org/"}`,
+          "END:VEVENT",
+          "END:VCALENDAR"
+        ];
 
-    icsBtn.addEventListener("click", () => {
-      const icsLines = [
-        "BEGIN:VCALENDAR",
-        "VERSION:2.0",
-        "PRODID:-//BruceFest 2027//Gravity Across Scales//EN",
-        "CALSCALE:GREGORIAN",
-        "METHOD:PUBLISH",
-        "BEGIN:VEVENT",
-        "UID:brucefest-2027-ischia@aei.mpg.de",
-        "DTSTAMP:20261109T120000Z",
-        `DTSTART;VALUE=DATE:${event.startDateISO}`,
-        `DTEND;VALUE=DATE:${event.endDateISO}`,
-        `SUMMARY:${event.title}: ${event.subtitle} (${event.shortName})`,
-        `LOCATION:${event.locationShort}`,
-        `DESCRIPTION:${event.dedication}. ${event.datesFull}, ${event.locationShort}.`,
-        "END:VEVENT",
-        "END:VCALENDAR"
-      ];
-
-      const blob = new Blob([icsLines.join("\r\n")], { type: "text/calendar;charset=utf-8" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "BruceFest-2027-Ischia.ics";
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    });
+        const blob = new Blob([icsLines.join("\r\n")], { type: "text/calendar;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "BruceFest-2027-Ischia.ics";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
+    }
   }
 
   renderMastheadAndOverview();
@@ -281,5 +336,5 @@
   renderRegistration();
   renderVenue();
   renderCommittee();
-  setupCalendarLink();
+  setupCalendarLinks();
 })();
