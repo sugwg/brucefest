@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gravity Across Scales: From the Early Universe to SMBHs | BruceFest 2027</title>
+  <meta name="description" content="Gravity Across Scales: from the early Universe to SMBHs — A conference celebrating the career of Prof. Bruce Allen (BruceFest 2027). 22–26 May 2027, Ischia Island, Italy." />
+  
+  <!-- Google Fonts: Cormorant Garamond (Editorial Serif), Plus Jakarta Sans (Clean UI), JetBrains Mono (Scales & Math) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Top Status Banner -->
+  <div id="status-banner" class="status-banner" role="region" aria-label="Announcement Banner">
+    <div class="container status-banner-inner">
+      <span id="banner-badge" class="status-pill">Save the Date</span>
+      <p id="banner-message" class="status-text">
+        22–26 May 2027 • Ischia Island, Italy — Registration, payment link, speakers, and detailed schedule are currently work in progress.
+      </p>
+    </div>
+  </div>
+
+  <!-- Navigation Header -->
+  <header class="site-header" id="top">
+    <div class="container nav-container">
+      <a href="#top" class="brand-logo" aria-label="Gravity Across Scales Home">
+        <span class="brand-kicker" id="nav-short-name">BruceFest 2027</span>
+        <span class="brand-main" id="nav-title">Gravity Across Scales</span>
+      </a>
+
+      <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="#topics" class="nav-link">Topics</a></li>
+          <li><a href="#tribute" class="nav-link">Bruce Allen</a></li>
+          <li><a href="#speakers" class="nav-link">Speakers <span class="nav-wip-dot" title="Work in Progress">WIP</span></a></li>
+          <li><a href="#schedule" class="nav-link">Program <span class="nav-wip-dot" title="Work in Progress">WIP</span></a></li>
+          <li><a href="#venue" class="nav-link">Ischia &amp; Travel</a></li>
+          <li><a href="#committee" class="nav-link">Committee</a></li>
+          <li><a href="#registration" class="nav-link nav-cta">Registration &amp; Payment</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <!-- Subtle background wave & Hellings-Downs / GW horizon artwork -->
+      <div class="hero-bg-art" aria-hidden="true">
+        <svg viewBox="0 0 1440 420" preserveAspectRatio="none" class="hero-wave-svg">
+          <defs>
+            <linearGradient id="goldWaveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#e5a952" stop-opacity="0.08" />
+              <stop offset="50%" stop-color="#e5a952" stop-opacity="0.32" />
+              <stop offset="100%" stop-color="#e5a952" stop-opacity="0.08" />
+            </linearGradient>
+          </defs>
+          <!-- Inspiral chirp wave -->
+          <path d="M0,220 C120,200 180,240 280,220 C360,202 410,238 480,220 C540,204 580,236 630,220 C670,206 700,234 735,220 C765,204 790,236 815,220 C835,198 855,242 872,220 C888,190 902,250 916,220 C928,175 940,265 952,220 C962,155 972,285 982,220 C990,130 998,310 1006,220 C1012,165 1020,255 1030,220 C1045,212 1070,224 1120,220 L1440,220"
+                fill="none" stroke="url(#goldWaveGrad)" stroke-width="2" />
+        </svg>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="honoree-pill">
+            <span class="honoree-star" aria-hidden="true">✦</span>
+            <span id="hero-honoree-badge">A Workshop Celebrating the Career of Prof. Bruce Allen</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span id="hero-title-main">Gravity Across Scales</span>
+            <span class="hero-subtitle" id="hero-subtitle">From the Early Universe to SMBHs</span>
+          </h1>
+
+          <div class="hero-meta-bar">
+            <div class="hero-meta-item">
+              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <div>
+                <span class="meta-label">Dates</span>
+                <strong class="meta-value" id="hero-dates">Saturday, 22 May – Wednesday, 26 May 2027</strong>
+              </div>
+            </div>
+
+            <div class="hero-meta-divider" aria-hidden="true"></div>
+
+            <div class="hero-meta-item">
+              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <div>
+                <span class="meta-label">Location</span>
+                <strong class="meta-value" id="hero-location">Ischia Island, Italy</strong>
+              </div>
+            </div>
+          </div>
+
+          <div id="hero-description" class="hero-description">
+            <!-- Populated from config.js -->
+          </div>
+
+          <div class="hero-actions">
+            <button type="button" id="download-ics-btn" class="btn btn-primary">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Save the Date (.ics)
+            </button>
+            <button type="button" id="copy-std-btn" class="btn btn-secondary">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span id="copy-std-label">Copy Save-the-Date Details</span>
+            </button>
+            <a href="#registration" class="btn btn-outline-light">
+              Registration &amp; Payment Info
+            </a>
+          </div>
+        </div>
+
+        <!-- Visual Card: Hellings-Downs Curve & Scales of Gravity + Ischia -->
+        <aside class="hero-visual-card" aria-label="Scientific Motif: Hellings-Downs Correlation and Gravitational Scales">
+          <div class="visual-card-header">
+            <span class="visual-kicker">10⁻³⁵ m → 10²⁶ m • nHz → kHz</span>
+            <span class="visual-badge">BruceFest 2027</span>
+          </div>
+
+          <div class="hd-plot-container">
+            <svg id="hd-curve-svg" viewBox="0 0 380 210" class="hd-svg" role="img" aria-label="Hellings-Downs Quadrupolar Spatial Correlation Curve with Cosmic Variance Band">
+              <!-- Dynamically rendered exact Hellings-Downs curve + cosmic variance envelope in app.js -->
+            </svg>
+            <div class="hd-caption">
+              <span class="hd-formula">Γ(θ) = ½ − ¼ x + ¾ x ln x, &nbsp;x = (1 − cos θ)/2</span>
+              <span class="hd-sub">Hellings–Downs correlation &amp; cosmic variance band</span>
+            </div>
+          </div>
+
+          <div class="scales-spectrum">
+            <div class="scale-step">
+              <span class="scale-freq">Early Universe</span>
+              <span class="scale-name">dS QFT &amp; Cosmic Strings</span>
+            </div>
+            <div class="scale-step">
+              <span class="scale-freq">10 – 10³ Hz</span>
+              <span class="scale-name">LIGO • CBCs • CWs</span>
+            </div>
+            <div class="scale-step">
+              <span class="scale-freq">Petaflops</span>
+              <span class="scale-name">Einstein@Home &amp; Pulsars</span>
+            </div>
+            <div class="scale-step">
+              <span class="scale-freq">10⁻⁹ – 10⁻⁷ Hz</span>
+              <span class="scale-name">PTAs &amp; SMBHs</span>
+            </div>
+          </div>
+
+          <div class="visual-card-footer">
+            <div class="ischia-tag">
+              <span class="ischia-dot"></span>
+              <span>Ischia Island • Gulf of Naples, Italy • 22–26 May 2027</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Section 1: Scientific Topics ("Gravity Across Scales") -->
+    <section id="topics" class="section section-light">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Scientific Scope</span>
+          <h2 class="section-title">Workshop Themes Across Scales</h2>
+          <p class="section-subtitle">
+            The scientific program is organized around eleven core areas reflecting the breadth of Bruce Allen’s contributions to theoretical, computational, and observational gravitational physics.
+          </p>
+        </div>
+
+        <div id="topics-grid" class="topics-grid">
+          <!-- Populated from config.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Tribute to Bruce Allen -->
+    <section id="tribute" class="section section-tribute">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Honoring a Career of Discovery</span>
+          <h2 class="section-title" id="tribute-heading">Celebrating Bruce Allen: A Career Across Scales</h2>
+          <p class="section-subtitle" id="tribute-lead"></p>
+        </div>
+
+        <div id="tribute-timeline" class="tribute-timeline">
+          <!-- Populated from config.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Invited Speakers (Work in Progress) -->
+    <section id="speakers" class="section section-light">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Scientific Contributors</span>
+          <h2 class="section-title">Invited Speakers</h2>
+        </div>
+
+        <div id="speakers-container">
+          <!-- Populated from config.js (shows clear WIP state or confirmed speakers grid) -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Scientific Program & Session Structure (Work in Progress) -->
+    <section id="schedule" class="section section-sand">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Saturday, 22 May – Wednesday, 26 May 2027</span>
+          <h2 class="section-title">Scientific Program &amp; Sessions</h2>
+          <p class="section-subtitle">
+            Five days of morning and afternoon sessions on Ischia Island.
+          </p>
+        </div>
+
+        <div id="schedule-wip-banner" class="wip-alert-box">
+          <!-- Populated from config.js -->
+        </div>
+
+        <div id="schedule-grid" class="schedule-grid">
+          <!-- Populated from config.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Registration & External Payment Link (Work in Progress) -->
+    <section id="registration" class="section section-navy">
+      <div class="container">
+        <div class="section-header section-header-light">
+          <span class="section-eyebrow">Participation &amp; Conference Fee</span>
+          <h2 class="section-title">Registration &amp; Payment</h2>
+          <p class="section-subtitle">
+            Conference registration and fee payment are handled via dedicated external links.
+          </p>
+        </div>
+
+        <div id="registration-container" class="registration-card">
+          <!-- Populated from config.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Venue & Travel Guide to Ischia Island -->
+    <section id="venue" class="section section-light">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Gulf of Naples, Italy</span>
+          <h2 class="section-title">Venue, Hotel &amp; Travel to Ischia Island</h2>
+          <p class="section-subtitle">
+            Ischia is a volcanic island in the Tyrrhenian Sea at the northern end of the Gulf of Naples, easily reached by ferry or hydrofoil from central Naples.
+          </p>
+        </div>
+
+        <div id="venue-container" class="venue-layout">
+          <!-- Populated from config.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Organizing Committee -->
+    <section id="committee" class="section section-sand">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Organization</span>
+          <h2 class="section-title">Scientific Organizing Committee</h2>
+        </div>
+
+        <div id="committee-container" class="committee-wrapper">
+          <!-- Populated from config.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <p class="footer-brand">Gravity Across Scales: From the Early Universe to SMBHs</p>
+        <p class="footer-sub">A Workshop Celebrating the Career of Prof. Bruce Allen (BruceFest 2027)</p>
+        <p class="footer-meta">22–26 May 2027 • Ischia Island, Italy</p>
+      </div>
+      <div class="footer-col footer-links">
+        <a href="#topics">Topics</a>
+        <a href="#tribute">Bruce Allen</a>
+        <a href="#speakers">Speakers</a>
+        <a href="#schedule">Program</a>
+        <a href="#registration">Registration &amp; Payment</a>
+        <a href="#venue">Travel</a>
+        <a href="#committee">Committee</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
