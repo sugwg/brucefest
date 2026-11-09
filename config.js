@@ -12,7 +12,7 @@ window.CONFERENCE_CONFIG = {
   event: {
     title: "Gravity Across Scales",
     subtitle: "from the early Universe to SMBHs",
-    dedication: "A conference on the occasion of Bruce Allen’s 2027 retirement",
+    dedication: "A conference celebrating the career of Bruce Allen",
     shortName: "BruceFest 2027",
     datesDisplay: "22–26 May 2027",
     datesFull: "Saturday, 22 May – Wednesday, 26 May 2027",
@@ -26,7 +26,7 @@ window.CONFERENCE_CONFIG = {
     heroImage: "assets/ischia.jpg",
     heroCaption: "Castello Aragonese, Ischia Island, Gulf of Naples",
     overviewParagraphs: [
-      "We are delighted to invite colleagues and friends to participate in the conference “Gravity Across Scales: from the early Universe to SMBHs” on the occasion of Bruce Allen’s 2027 retirement.",
+      "From quantum fields in curved spacetime and cosmic strings to ground-based laser interferometry, distributed volunteer computing, and nanohertz pulsar timing arrays, gravitational physics connects phenomena across dozens of orders of magnitude. On the occasion of Bruce Allen’s retirement, colleagues, collaborators, and friends will gather on the island of Ischia to celebrate his career and explore gravitational physics across scales.",
       "The meeting will unfold over five full days, from Saturday, 22 May to Wednesday, 26 May 2027, and cover broad aspects of gravity—both theoretical and observational—astrophysics, and scientific computing. Held at the Hotel Continental Ischia (a short ferry ride from Naples, Italy), the venue provides a relaxed setting conducive to both scientific discussion and informal interaction, with opportunities to enjoy the surrounding landscape and community."
     ]
   },
