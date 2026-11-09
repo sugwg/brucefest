@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BruceFest 2027//Gravity Across Scales//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:brucefest-2027-ischia@bruceallen.org
+DTSTAMP:20261109T223500Z
+DTSTART;VALUE=DATE:20270522
+DTEND;VALUE=DATE:20270527
+SUMMARY:Gravity Across Scales: from the early Universe to SMBHs (BruceFest 2027)
+LOCATION:Hotel Continental Ischia, Via Michele Mazzella 74, 80077 Ischia NA, Italy
+DESCRIPTION:A conference on the occasion of Bruce Allen's 2027 retirement. Venue: Hotel Continental Ischia (https://www.hotelcontinentalischia.it/en/). Website: https://bruceallen.org/
+URL:https://bruceallen.org/
+END:VEVENT
+END:VCALENDAR
