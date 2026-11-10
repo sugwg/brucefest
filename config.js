@@ -50,6 +50,8 @@ window.CONFERENCE_CONFIG = {
     heading: "In Honor of Bruce Allen",
     image: "assets/bruce-allen.jpg",
     imageCaption: "Bruce Allen at the Max Planck Institute for Gravitational Physics (AEI Hannover)",
+    profileUrl: "https://www.aei.mpg.de/1460447/prof-bruce-allen",
+    profileLabel: "AEI Hannover Profile",
     paragraphs: [
       "Over four decades—from his doctoral work at Cambridge and faculty years at the University of Wisconsin–Milwaukee to his leadership as Director at the Max Planck Institute for Gravitational Physics (Albert Einstein Institute) in Hannover—Bruce Allen has shaped how gravitational waves and relativistic astrophysics are theorized, computed, and observed. His work spans vacuum states in de Sitter space and cosmic string radiation, foundational methods for LIGO data analysis and stochastic background searches, the creation of Einstein@Home and high-performance scientific clusters, the discovery of radio and gamma-ray pulsars, and the theory of pulsar timing array correlations. This conference brings together scientists from across all of these fields to celebrate his career and look ahead to the next questions in gravitational physics."
     ]

@@ -73,9 +73,13 @@
 
     const prose = document.getElementById("tribute-prose");
     if (prose && Array.isArray(tribute.paragraphs)) {
-      prose.innerHTML = tribute.paragraphs
+      const paragraphsHtml = tribute.paragraphs
         .map((p) => `<p>${escapeHtml(p)}</p>`)
         .join("");
+      const profileLinkHtml = tribute.profileUrl
+        ? `<div class="editorial-links-row"><a href="${escapeHtml(tribute.profileUrl)}" class="editorial-link" target="_blank" rel="noopener">${escapeHtml(tribute.profileLabel || "Official Webpage")} →</a></div>`
+        : "";
+      prose.innerHTML = paragraphsHtml + profileLinkHtml;
     }
   }
 
